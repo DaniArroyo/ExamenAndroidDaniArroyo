@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/primerJugadorPreguntaFragment"
+        android:name="com.example.examendaniarroyo.PrimerJugadorPreguntaFragment"
+        android:label="fragment_primer_jugador_pregunta"
+        tools:layout="@layout/fragment_primer_jugador_pregunta" >
+        <action
+            android:id="@+id/action_primerJugadorPreguntaFragment_to_respuestaSegundoJugadorFragment"
+            app:destination="@id/respuestaSegundoJugadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.examendaniarroyo.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_primerJugadorPreguntaFragment"
+            app:destination="@id/primerJugadorPreguntaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/respuestaSegundoJugadorFragment"
+        android:name="com.example.examendaniarroyo.RespuestaSegundoJugadorFragment"
+        android:label="fragment_respuesta_segundo_jugador"
+        tools:layout="@layout/fragment_respuesta_segundo_jugador" >
+        <action
+            android:id="@+id/action_respuestaSegundoJugadorFragment_to_segundoJugadorPreguntaFragment"
+            app:destination="@id/segundoJugadorPreguntaFragment" />
+        <action
+            android:id="@+id/action_respuestaSegundoJugadorFragment_to_ganadorFragment"
+            app:destination="@id/ganadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/segundoJugadorPreguntaFragment"
+        android:name="com.example.examendaniarroyo.SegundoJugadorPreguntaFragment"
+        android:label="fragment_segundo_jugador_pregunta"
+        tools:layout="@layout/fragment_segundo_jugador_pregunta" >
+        <action
+            android:id="@+id/action_segundoJugadorPreguntaFragment_to_respuestaPrimerJugadorFragment"
+            app:destination="@id/respuestaPrimerJugadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/respuestaPrimerJugadorFragment"
+        android:name="com.example.examendaniarroyo.RespuestaPrimerJugadorFragment"
+        android:label="fragment_respuesta_primer_jugador"
+        tools:layout="@layout/fragment_respuesta_primer_jugador" >
+        <action
+            android:id="@+id/action_respuestaPrimerJugadorFragment_to_primerJugadorPreguntaFragment"
+            app:destination="@id/primerJugadorPreguntaFragment" />
+        <action
+            android:id="@+id/action_respuestaPrimerJugadorFragment_to_ganadorFragment"
+            app:destination="@id/ganadorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ganadorFragment"
+        android:name="com.example.examendaniarroyo.GanadorFragment"
+        android:label="fragment_ganador"
+        tools:layout="@layout/fragment_ganador" />
+</navigation>
